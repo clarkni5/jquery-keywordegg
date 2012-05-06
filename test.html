@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Egg</title>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js "></script>
+	<script src="jquery-keywordegg.js "></script>
+</head>
+<body>
+
+	<h2 id="foo" style="display:none;">This is an easter egg.</h2>
+
+	<p>
+		Type "foobar" or "foo bar" to trigger the easter egg.
+	</p>
+	
+	<p>
+		Typing inside form element will <em>not</em> trigger the easter egg.
+	</p>
+	
+	<p><input type="text"></p>
+	
+	<p><select><option>This is an option</option></select></p>
+	
+	<p><textarea></textarea></p>
+
+	<script>
+		
+		$(document).ready(function() {
+		
+			$(document).keywordegg({
+				"keyword": "foo ?bar",
+				"onMatch": function(matches) {
+					$("#foo").show();
+				}
+			});
+		
+		});
+		
+	</script>
+
+</body>
+</html>
