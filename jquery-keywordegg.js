@@ -29,19 +29,18 @@
 				log = log.slice(-1 * settings.maxLength);
 				
 				// Look for a match
-				var matches = log.match(pattern);
-				if (matches) {
+				var match = log.match(pattern);
+				if (match) {
 					log = ""; // clear the log
-console.log("match", matches);
-					settings.onMatch.apply(this, matches);
+					settings.onMatch.apply(this, match);
 				}
 			}
 		});
 
 	};
 	
-	function onMatch(matches) {
-		console.log("match", matches);
+	function onMatch(match) {
+		console.log("match", match);
 	}
 	
 })(jQuery);
